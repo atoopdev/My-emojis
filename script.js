@@ -4,6 +4,7 @@ const emojiInput = document.getElementById("emoji-input");
 const addtoEndBtn = document.getElementById("push-btn");
 const addtoBeginningBtn = document.getElementById("unshift-btn");
 const removefromEndBtn = document.getElementById("pop-btn");
+const removefromBeginningBtn = document.getElementById("shift-btn");
 
 // holds emojis and html
 let listItems = "";
@@ -54,21 +55,24 @@ addtoBeginningBtn.addEventListener("click", function(){
 // ------------------------------Remove from End ------------------------------
 removefromEndBtn.addEventListener("click", function(){
     console.log("Remove from End button clicked");
-    // console.log(emojiInput.value);
-
-    // make sure have input
-    // if(emojiInput.value){
-    // add new emoji to array
+    
+    // remove from end
     myEmojis.pop();
 
-    // verify added
-    // console.log(myEmojis);
+    
     Render();
-    // } else{
-        // console.log("emojiInput.value not truthy");
-    // }
-    // clear input field
-    // emojiInput.value = "";
+    
+})
+
+// -------------------------------Remove from Beginning ------------------------
+removefromBeginningBtn.addEventListener("click", function(){
+    console.log("Remove from Beginning button clicked");
+    
+    // remove from end
+    myEmojis.shift();
+
+    
+    Render();
 })
 
 // ------------------------------Render --------------------------------------
