@@ -2,6 +2,8 @@ const myEmojis = ["🏃", "📔", "🍳"];
 let emojiContainerEL = document.getElementById("emojicontainer-el");
 const emojiInput = document.getElementById("emoji-input");
 const addtoEndBtn = document.getElementById("push-btn");
+const addtoBeginningBtn = document.getElementById("unshift-btn");
+const removefromEndBtn = document.getElementById("pop-btn");
 
 // holds emojis and html
 let listItems = "";
@@ -27,6 +29,46 @@ addtoEndBtn.addEventListener("click", function(){
     // clear input field
     emojiInput.value = "";
     
+})
+
+// -------------------------Add to beginning -------------------------------------
+addtoBeginningBtn.addEventListener("click", function(){
+    console.log("Add to Beginning button clicked");
+    console.log(emojiInput.value);
+
+    // make sure have input
+    if(emojiInput.value){
+    // add new emoji to array
+    myEmojis.unshift(emojiInput.value);
+
+    // verify added
+    console.log(myEmojis);
+    Render();
+    } else{
+        console.log("emojiInput.value not truthy");
+    }
+    // clear input field
+    emojiInput.value = "";
+})
+
+// ------------------------------Remove from End ------------------------------
+removefromEndBtn.addEventListener("click", function(){
+    console.log("Remove from End button clicked");
+    // console.log(emojiInput.value);
+
+    // make sure have input
+    // if(emojiInput.value){
+    // add new emoji to array
+    myEmojis.pop();
+
+    // verify added
+    // console.log(myEmojis);
+    Render();
+    // } else{
+        // console.log("emojiInput.value not truthy");
+    // }
+    // clear input field
+    // emojiInput.value = "";
 })
 
 // ------------------------------Render --------------------------------------
